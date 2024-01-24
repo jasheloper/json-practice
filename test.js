@@ -17,7 +17,10 @@ function displayCatInfo(catString) {
         const motherName = motherData["name"];
         motherInfo += `${motherName}, `;
 
-        // store the total number of kittens, and how many are male and female, in the kittenInfo variable.
+        // store the total number of kittens, 
+        // and how many are male and female, 
+        // in the kittenInfo variable.
+
     }
 
     console.log(motherInfo);
