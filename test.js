@@ -1,57 +1,24 @@
-const kittens = [
-    {
-      "name" : "Lindy",
-      "breed" : "Cymric",
-      "color" : "white",
-      "kittens" : [
-        {
-          "name" : "Percy",
-          "gender" : "m"
-        },
-        {
-          "name" : "Thea",
-          "gender" : "f"
-        },
-        {
-          "name" : "Annis",
-          "gender" : "f"
-        }
-      ]
-    },
-    {
-      "name" : "Mina",
-      "breed" : "Aphrodite Giant",
-      "color" : "ginger",
-      "kittens" : [
-        {
-          "name" : "Doris",
-          "gender" : "f"
-        },
-        {
-          "name" : "Pickle",
-          "gender" : "f"
-        },
-        {
-          "name" : "Max",
-          "gender" : "m"
-        }
-      ]
-    },
-    {
-      "name" : "Antonia",
-      "breed" : "Ocicat",
-      "color" : "leopard spotted",
-      "kittens" : [
-        {
-          "name" : "Bridget",
-          "gender" : "f"
-        },
-        {
-          "name" : "Randolph",
-          "gender" : "m"
-        }
-      ]
-    }
-  ]
+let motherInfo = "The mother cats are called ";
 
-  console.log(kittens["name"][0])
+let kittenInfo;
+
+const requestURL = "https://jasheloper.github.io/json-practice/sample.json";
+
+fetch(requestURL)
+  .then((response) => response.text())
+  .then((text) => displayCatInfo(text));
+
+function displayCatInfo(catString) {
+  const catData = JSON.parse(catString);
+
+    for (let i = 0; i < catData.length; i++) {
+        // store the names of the three mother cats, separated by commas, in the motherInfo variable
+        const motherData = catData[i];
+        const motherName = motherData["name"];
+        motherInfo += `${motherName}, `;
+
+        // store the total number of kittens, and how many are male and female, in the kittenInfo variable.
+    }
+
+    console.log(motherInfo);
+}
