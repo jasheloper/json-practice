@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8"/>
+
+<head>
+    <meta charset="utf-8" />
     <title>JSON: Task 1</title>
     <style>
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
 
-      * {
-        box-sizing: border-box;
-      }
+        * {
+            box-sizing: border-box;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
 
     <section class="preview">
 
@@ -23,34 +24,50 @@
 
     </section>
 
-  </body>
-  <script>
+</body>
+<script>
     const section = document.querySelector('section');
 
     let para1 = document.createElement('p');
     let para2 = document.createElement('p');
+
     let motherInfo = 'The mother cats are called ';
+
     let kittenInfo;
+    
     const requestURL = 'https://jasheloper.github.io/json-practice/sample.json';
 
+
     fetch(requestURL)
-    .then(response => response.text())
-    .then(text => displayCatInfo(text))
+        // The JSON is loaded into the page as a text string 
+
+        .then(response => response.text())
+        .then(text => displayCatInfo(text))
+
+    // and made available in the catString parameter of the displayCatInfo() function.
+
+    // fill in the missing parts of the displayCatInfo() function
 
     function displayCatInfo(catString) {
-      let total = 0;
-      let male = 0;
+        const catData = JSON.parse(catString);
+        console.log(catData);
 
-      // Add your code here
+        let total = 0;
+        let male = 0;
 
-      // Don't edit the code below here!
+        // // Add your code here
 
-      para1.textContent = motherInfo;
-      para2.textContent = kittenInfo;
+        // store the names of the three mother cats - separated by commas - in the motherInfo variable
+
+
+        // // Don't edit the code below here!
+
+        para1.textContent = motherInfo;
+        para2.textContent = kittenInfo;
     }
 
     section.appendChild(para1);
     section.appendChild(para2);
-  </script>
+</script>
 
 </html>
