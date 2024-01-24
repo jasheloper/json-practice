@@ -10,18 +10,17 @@ fetch(requestURL)
 
 function displayCatInfo(catString) {
   const catData = JSON.parse(catString);
+  console.log(catData);
+
 
     for (let i = 0; i < catData.length; i++) {
         // store the names of the three mother cats, separated by commas, in the motherInfo variable
-        const motherData = catData[i];
-        const motherName = motherData["name"];
-        motherInfo += `${motherName}, `;
 
-        // store the total number of kittens, 
-        // and how many are male and female, 
-        // in the kittenInfo variable.
+        // add inner loop:
+        // store the total number of kittens, and how many are male and female, in the kittenInfo variable.
 
     }
 
-    console.log(motherInfo);
+    // console.log(motherInfo);
+    // console.log(kittenInfo);
 }
